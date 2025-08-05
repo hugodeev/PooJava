@@ -3,63 +3,63 @@ public class Televisor {
     private int volume;
     private boolean ligado;
 
-    public Televisor(int canal, int volume) {
-        this.canal = canal;
-        this.volume = volume;
-        this.ligado = false;
+    // Construtor
+    public Televisor(int canalInicial, int volumeInicial) {
+        this.canal = canalInicial;
+        this.volume = volumeInicial;
+        this.ligado = false; 
     }
 
-    // Métodos
+    // Métodos para ligar e desligar
     public void ligar() {
-        if (!ligado) {
-            ligado = true;
-            System.out.println("O televisor foi ligado com sucesso.");
-        } else {
-            System.out.println("Já estava ligado.");
-        }
+        this.ligado = true;
+        System.out.println("Televisor ligado.");
     }
 
     public void desligar() {
-        if (ligado) {
-            ligado = false;
-            System.out.println("Desligado corretamente.");
-        } else {
-            System.out.println("Já estava desligado.");
-        }
+        this.ligado = false;
+        System.out.println("Televisor desligado.");
     }
 
+    // Métodos para aumentar e diminuir o volume
     public void aumentarVolume(int aumento) {
         if (ligado) {
-            if (volume < 100 && aumento <= 100 - volume) {
+            if (volume + aumento <= 100) {
                 volume += aumento;
                 System.out.println("Volume aumentado para: " + volume);
             } else {
-                System.out.println("Volume já está no máximo ou aumento inválido.");
+                System.out.println("Volume já está no máximo.");
             }
         } else {
-            System.out.println("Não é possível alterar o volume. A TV está desligada.");
+            System.out.println("Não é possível alterar o volume. O Televisor está desligado.");
         }
     }
 
-    // Getters e Setters
-    public int getCanal() {
-        return canal;
-    }
-
-    public void setCanal(int canal) {
+    public void diminuirVolume(int diminuir) {
         if (ligado) {
-            this.canal = canal;
-            System.out.println("Canal alterado para: " + canal);
+            if (volume - diminuir >= 0) {
+                volume -= diminuir;
+                System.out.println("Volume diminuído para: " + volume);
+            } else {
+                System.out.println("Volume já está no mínimo.");
+            }
         } else {
-            System.out.println("Não é possível mudar de canal. A TV está desligada.");
+            System.out.println("Não é possível alterar o volume. O Televisor está desligado.");
         }
     }
 
-    public int getVolume() {
-        return volume;
+    // Método para trocar o canal
+    public void trocarCanal(int novoCanal) {
+        if (ligado) {
+            this.canal = novoCanal;
+            System.out.println("Canal trocado para: " + canal);
+        } else {
+            System.out.println("Não é possível trocar o canal. O Televisor está desligado.");
+        }
     }
 
-    public boolean isLigado() {
-        return ligado;
+    // Método toString para representação textual
+    public String toString() {
+        return "Televisor [Canal: " + canal + ", Volume: " + volume + ", Ligado: " + (ligado ? "Sim" : "Não") + "]";
     }
 }
