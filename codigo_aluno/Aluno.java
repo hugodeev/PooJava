@@ -34,15 +34,14 @@ public class Aluno {
     }
 
     public String toString() {
-        return "Aluno: " + nome +
-               "\nMatrícula: " + matricula +
-               "\nNota 1: " + nota1 +
-               "\nNota 2: " + nota2 +
-               "\nMédia: " + String.format("%.1f", calcularMedia()) +
-               "\nSituação: " + situacao();
+        return "Nome: " + nome +
+               " | Matrícula: " + matricula +
+               " | Média: " + String.format("%.1f", calcularMedia()) +
+               " | Situação: " + situacao();
     }
 
     public void exibirInfo() {
         System.out.println(toString());
     }
+
 }
