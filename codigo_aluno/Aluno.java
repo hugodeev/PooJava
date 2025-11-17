@@ -6,7 +6,7 @@ public class Aluno {
     private String nome;
     private int matricula;
     private double nota1;
-    private double nota2;
+    private double nota2; 
 
     // Construtor
     public Aluno(String nome, int matricula, double nota1, double nota2) {

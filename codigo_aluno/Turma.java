@@ -10,8 +10,10 @@ public class Turma {
     public void adicionarAluno(Aluno aluno) {
         if (quantidade < alunos.length) {
             alunos[quantidade] = aluno; // Adiciona o nv aluno na posição atual do array
-            quantidade++;
-        } else {
+            quantidade++; 
+        } 
+        
+        else {
             System.out.println("Turma cheia!");
         }
     }
@@ -21,7 +23,7 @@ public class Turma {
         System.out.println("==== Listar Alunos ====");
         for (int i = 0; i < quantidade; i++) {
             alunos[i].exibirInfo();
-            System.out.println();
+            System.out.println(); 
         }
     }
 

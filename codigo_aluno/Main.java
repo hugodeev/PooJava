@@ -11,7 +11,7 @@ public class Main {
         // Adiciona 3 alunos
         turma.adicionarAluno(new Aluno("Hugo", 102, 8.5, 7.0));
         turma.adicionarAluno(new Aluno("Davi", 200, 9.5, 10.0));
-        turma.adicionarAluno(new Aluno("Thayná", 100, 0.0, 4.0));
+        turma.adicionarAluno(new Aluno("Victor", 100, 0.0, 4.0));
 
         // Lista todos os alunos
         turma.listarAlunos();
