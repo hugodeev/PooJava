@@ -23,4 +23,5 @@ public class CadastroPagamento {
             System.out.println(pagamentos[i]);
         }
     }
+    
 }

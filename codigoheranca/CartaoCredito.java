@@ -3,7 +3,7 @@ public class CartaoCredito extends Pagamento {
 
     private int quantidadeParcelas;
 
-    public CartaoCredito(String nomeCliente, double valor, int quantidadeParcelas) {
+    public CartaoCredito(String nomeCliente, double valor, int quantidadeParcelas){
         super(nomeCliente, valor);
         this.quantidadeParcelas = quantidadeParcelas;
     }
@@ -15,8 +15,8 @@ public class CartaoCredito extends Pagamento {
 
     @Override
     public String toString() {
-        return "Cartão de Crédito - Cliente: \n" + //
-                        " " + nomeCliente +
+        return "Cartão de Crédito - Cliente: \n" + 
+               "Nome Cliente: " + nomeCliente +
                ", Valor total com juros: R$ " + processarPagamento() +
                ", Parcelas: " + quantidadeParcelas;
     }
